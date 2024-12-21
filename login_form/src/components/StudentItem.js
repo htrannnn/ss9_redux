@@ -14,10 +14,10 @@ function StudentItem(props) {
 			<td className="text-center">{address}</td>
 			<td className="text-center">{email}</td>
 			<td className="text-center">
-				<Link type="button" className="btn btn-secondary rounded-0 me-2">
+				<Link type="button" className="btn btn-success rounded-0 me-2">
 					Detail
 				</Link>
-				<button type="button" className="btn btn-secondary rounded-0">
+				<button type="button" className="btn btn-success rounded-0">
 					Delete
 				</button>
 			</td>

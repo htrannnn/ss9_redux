@@ -39,5 +39,19 @@
 			"id": 3,
 			"name": "Da Nang"
 		}
+	],
+	"accounts": [
+		{
+			"id": 1,
+			"username": "admin",
+			"password": "htran03",
+			"role": "ADMIN"
+		},
+		{
+			"id": 2,
+			"username": "Huyen Tran",
+			"password": "tran03",
+			"role": "STUDENT"
+		}
 	]
 }

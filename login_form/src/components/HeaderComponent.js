@@ -29,6 +29,11 @@ function HeaderComponent() {
 								Student List
 							</Link>
 						</li>
+						<li className="nav-item">
+							<Link type="button" className="nav-link btn btn-outline-success rounded-0" to="/login_students_management">
+								Login
+							</Link>
+						</li>
 					</ul>
 				</div>
 			</div>

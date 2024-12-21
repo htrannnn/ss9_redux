@@ -8,8 +8,7 @@ function StudentList() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const students = await getAllStudent();
-			setStudentList(students);
+			setStudentList(await getAllStudent());
 		};
 		fetchData();
 	}, []);
