@@ -5,6 +5,7 @@ import HomeComponent from "./components/HomeComponent";
 import FooterComponent from "./components/FooterComponent";
 import StudentList from "./components/StudentList";
 import LoginComponent from "./components/LoginComponent";
+import { ToastContainer } from "react-toastify";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path="/login_students_management" element={<LoginComponent />}></Route>
 			</Routes>
 			<FooterComponent />
+			<ToastContainer />
 		</>
 	);
 }

@@ -4,3 +4,10 @@ export function login(account) {
 		payload: account,
 	};
 }
+
+export function logout() {
+	return {
+		type: "LOGOUT",
+		payload: null,
+	};
+}

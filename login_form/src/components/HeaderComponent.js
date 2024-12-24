@@ -1,7 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../redux/accountAction";
+import { toast } from "react-toastify";
 
 function HeaderComponent() {
+	const account = useSelector((state) => state.user.account);
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	const handleLogout = () => {
+		dispatch(logout());
+		toast.success("Đăng xuất thành công");
+		navigate("/homepage");
+	};
+
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 			<div className="container-fluid">
@@ -30,9 +43,21 @@ function HeaderComponent() {
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link type="button" className="nav-link btn btn-outline-success rounded-0" to="/login_students_management">
-								Login
-							</Link>
+							{!account && (
+								<Link type="button" className="nav-link btn btn-outline-success rounded-0" to="/login_students_management">
+									Login
+								</Link>
+							)}
+						</li>
+						<li className="nav-item">
+							<div className="mt-2 ms-2 me-2 fw-bold">{account && account.username}</div>
+						</li>
+						<li className="nav-item">
+							{account && (
+								<Link type="button" className="nav-link btn btn-outline-success rounded-0" to="/login_students_management" onClick={handleLogout}>
+									Logout
+								</Link>
+							)}
 						</li>
 					</ul>
 				</div>

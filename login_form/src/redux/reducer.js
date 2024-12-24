@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { LOGIN_TYPE } from "./accountConstant";
+import { LOGIN_TYPE, LOGOUT_TYPE } from "./accountConstant";
 
 //initState: lưu trữ các thuộc tính của form
 const initState = {
@@ -17,9 +17,14 @@ function accountReducer(state = initState, action) {
 				...state,
 				account: action.payload,
 			};
+		case LOGOUT_TYPE:
+			return {
+				...state,
+				account: null,
+			};
 
 		default:
-			return;
+			return state;
 	}
 }
 

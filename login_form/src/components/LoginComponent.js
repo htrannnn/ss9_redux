@@ -1,13 +1,13 @@
 import { React, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { checkLogin } from "../services/accountService";
 import { login } from "../redux/accountAction";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function LoginComponent() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	const account = useSelector((state) => state.user.account);
 
 	const usernameRef = useRef();
 	const passwordRef = useRef();
@@ -20,6 +20,7 @@ function LoginComponent() {
 		const account = await checkLogin(loginInfo);
 
 		dispatch(login(loginInfo)); //hàm login trả về 1 action
+		toast.success("Đăng nhập thành công");
 		navigate("/students");
 	};
 
@@ -37,7 +38,7 @@ function LoginComponent() {
 						<input type="password" name="password" className="form-control" placeholder="Enter your password" ref={passwordRef} />
 					</div>
 					<div className="text-center">
-						<button type="button" className="btn btn-success w-100" onClick={handleLogin}>
+						<button type="button" className="btn btn-success w-100 rounded-0" onClick={handleLogin}>
 							Login
 						</button>
 					</div>
