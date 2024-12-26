@@ -11,8 +11,8 @@ function HeaderComponent() {
 
 	const handleLogout = () => {
 		dispatch(logout());
-		toast.success("Đăng xuất thành công");
 		navigate("/homepage");
+		toast.success("Đăng xuất thành công");
 	};
 
 	return (
